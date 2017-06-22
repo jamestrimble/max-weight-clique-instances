@@ -1,8 +1,8 @@
 # Maximum weight clique instances
 
 This repository of benchmark instances for the maximum weight clique problem
-accompanies the paper "On Maximum Weight Clique Algorithms, and
-How They Are Evaluated" by Ciaran McCreesh, Patrick Prosser, Kyle Simpson and James
+accompanies the paper _On Maximum Weight Clique Algorithms, and
+How They Are Evaluated_ by Ciaran McCreesh, Patrick Prosser, Kyle Simpson and James
 Trimble (CP 2017, forthcoming).
 
 All graphs are in
