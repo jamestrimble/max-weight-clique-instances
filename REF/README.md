@@ -1,7 +1,7 @@
 # Research Excellence Framework Instances
 
 These instances were generated using a program developed in summer 2016 by
-David Manlove, Kyle Simpson, and Patrick Prosser.  Each vertex represents an
+David Manlove, Patrick Prosser, and Kyle Simpson.  Each vertex represents an
 author, along with a set of four of that author's publications.  Two vertices
 are adjacent if and only if they are associated with different authors and have
 disjoint sets of papers.
