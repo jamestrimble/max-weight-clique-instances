@@ -18,3 +18,5 @@ to the second vertex.
     n 4 13
     e 1 2
 
+We hope to add further sets of instances over time.  Please contact j.trimble.1 <at> research.glasgow.ac.uk
+if you have any suggestions.
