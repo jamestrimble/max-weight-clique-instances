@@ -1,5 +1,7 @@
 # Maximum weight clique instances
 
+[![DOI](https://zenodo.org/badge/95154389.svg)](https://zenodo.org/badge/latestdoi/95154389)
+
 This repository of benchmark instances for the maximum weight clique problem
 accompanies the paper _On Maximum Weight Clique Algorithms, and
 How They Are Evaluated_ by Ciaran McCreesh, Patrick Prosser, Kyle Simpson and James
