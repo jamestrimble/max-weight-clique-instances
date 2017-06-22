@@ -1,7 +1,6 @@
 # Winner Determination Problem Instances
 
-The graphs in this directory are derived from winner determination problem instances from Lau, H.C., Goh, Y.G.: [_An intelligent brokering system to support multi-agent web-
-based 4th-party logistics._](http://dx.doi.org/10.1109/TAI.2002.1180800) In: 14th IEEE International Conference on Tools with
+The graphs in this directory are derived from winner determination problem instances from Lau, H.C., Goh, Y.G.: [_An intelligent brokering system to support multi-agent web-based 4th-party logistics._](http://dx.doi.org/10.1109/TAI.2002.1180800) In: 14th IEEE International Conference on Tools with
 Artificial Intelligence (ICTAI) 2002, 4-6 November 2002, Washington, DC, USA. p.
 154. IEEE Computer Society (2002)
 
