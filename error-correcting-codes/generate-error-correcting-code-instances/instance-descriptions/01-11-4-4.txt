@@ -1,0 +1,13 @@
+# n d w
+11 4 4
+# Number of generating permutations
+1
+# Number of tuples in permutation
+6
+# Tuples in permutation
+1 2
+3 4
+5 6
+7 8
+9 10
+11

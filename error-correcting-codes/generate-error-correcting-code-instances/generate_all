@@ -1,0 +1,6 @@
+for f in instance-descriptions/*.txt
+do
+    outname=$(basename -s .txt $f)
+    cat $f | ./generate > $outname.wclq
+    echo $f
+done

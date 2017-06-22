@@ -1,0 +1,97 @@
+#!/usr/bin/python3
+
+import sys
+
+def read_permutations(lines, permutation_count):
+    permutations = []
+    for i in range(permutation_count):
+        cycle_count = lines[0][0]
+        lines = lines[1:]
+        permutations.append([[x-1 for x in line] for line in lines[:cycle_count]])
+        lines = lines[cycle_count:]
+    return permutations
+
+def popcount(n):
+    # http://stackoverflow.com/a/9831671/3347737
+    return bin(n).count("1")
+
+def get_bit(n, index):
+    return n & (1<<index) != 0
+
+def hamming_distance(code1, code2, popcounts):
+    return popcounts[code1 ^ code2]
+
+def min_hamming_distance_between_lists_ge(codes1, codes2, d, popcounts):
+    for c1 in codes1:
+        for c2 in codes2:
+            if hamming_distance(c1, c2, popcounts) < d:
+                return False
+    return True
+
+def min_hamming_distance_within_list_ge(codes, d, popcounts):
+    for c1 in codes:
+        for c2 in codes:
+            if c1 != c2:
+                if hamming_distance(c1, c2, popcounts) < d:
+                    return False
+    return True
+
+def permuted(code, permutation):
+    for cycle in permutation:
+        bits = [get_bit(code, index) for index in cycle]
+        for bit, index in zip(bits, cycle[1:] + cycle[:1]):
+            if bit != get_bit(code, index):
+                code ^= 1<<index
+    return code
+
+def generate(lines):
+    lines = [line for line in lines if not line.startswith("#")]
+    lines = [[int(x) for x in line.strip().split()] for line in lines]
+
+    n, d, w = lines[0]
+
+    permutation_count = lines[1][0]
+
+    permutations = read_permutations(lines[2:], permutation_count)
+
+    code_used = [False] * (1 << n)
+
+    popcounts = [popcount(i) for i in range(1 << n)]
+
+    orbits = []
+    to_visit = []  # A stack of the members of the current orbit that are still to be visited
+    for code in range(1 << n):
+        if popcounts[code] == w:
+            if not code_used[code]:
+                orbit = []
+                to_visit.append(code)
+                while to_visit:
+                    c = to_visit.pop()
+                    if not code_used[c]:
+                        orbit.append(c)
+                        code_used[c] = True
+                        for permutation in permutations:
+                            c_permuted = permuted(c, permutation)
+                            if not code_used[c_permuted]:
+                                to_visit.append(c_permuted)
+                if min_hamming_distance_within_list_ge(orbit, d, popcounts):
+                    orbits.append(orbit)
+
+    edge_count = 0
+    adjmat = [[False] * len(orbits) for orbit in orbits]
+    for i in range(len(orbits)):
+        for j in range(i+1, len(orbits)):
+            if min_hamming_distance_between_lists_ge(orbits[i], orbits[j], d, popcounts):
+                adjmat[i][j] = True
+                edge_count += 1
+
+    print("p edge {} {}".format(len(orbits), edge_count))
+    for i, orbit in enumerate(orbits):
+        print("n {} {}".format(i+1, len(orbit)))
+    for i in range(len(orbits)):
+        for j in range(i+1, len(orbits)):
+            if adjmat[i][j]:
+                print("e {} {}".format(i+1, j+1))
+    
+if __name__=="__main__":
+    generate(sys.stdin.readlines())
