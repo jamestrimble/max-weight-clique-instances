@@ -1,3 +1,5 @@
 Do we want to link to the paper now?  Where should we host it?
 
 How should we refer to Kyle's project in the REF directory's README?
+
+I've included the shuffled DIMACS instances we used. Are we sure that the DIMACS instances aren't already shuffled?
