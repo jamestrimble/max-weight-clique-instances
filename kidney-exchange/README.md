@@ -3,8 +3,7 @@
 We derived these instances from the first 100 of John Dickerson's
 [kidney exchange instances](http://www.preflib.org/data/matching/kidney/)
 on PrefLib.  Dickerson's code for generating these instances is
-[available on GitHub](https://github.com/JohnDickerson/KidneyExchange/blob/master/src/edu/cmu/cs/dickerson/kpd/structure/generator/SaidmanPoolGenerator.java).  
-This is based on the generator described in
+[available on GitHub](https://github.com/JohnDickerson/KidneyExchange/blob/master/src/edu/cmu/cs/dickerson/kpd/structure/generator/SaidmanPoolGenerator.java).  This is based on the generator described in
 S. L. Saidman, Alvin Roth, Tayfun Sonmez, Utku Unver, Frank Delmonico:
 _Increasing the Opportunity of Live Kidney Donation by Matching for Two and Three Way Exchanges,_
 **Transplantation**, Volume 81, Number 5, March 15, 2006.
