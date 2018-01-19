@@ -20,5 +20,8 @@ to the second vertex.
     n 4 13
     e 1 2
 
+The UAI instances were kindly contributed by [Hong Xu](http://www.hong.me/).  Note that
+these are maximum weight independent set instances.
+
 We hope to add further sets of instances over time.  Please contact j.trimble.1@research.glasgow.ac.uk
 if you have any suggestions.
